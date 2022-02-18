@@ -1,0 +1,21 @@
+.resdropBox{
+	border: 3px dashed #1D92AF;
+	border-radius: 5px;
+	background: #F3F4F5;
+	cursor: pointer;
+}
+.resdropBox{
+	min-height: 80px;
+	padding: 5px 5px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+.resdropBox p{
+	text-align: center;
+	margin: 2em 0;
+	font-size: 10px;
+	font-weight: bold;
+}
+.resfileInput{
+	display: none;
+}

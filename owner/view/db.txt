@@ -1,0 +1,90 @@
+CREATE TABLE blog_category(
+	id int(11) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    access_level TINYINT(1) NOT NULL,
+	alias VARCHAR(200) NOT NULL,
+    state TINYINT(1) NOT NULL,
+    created DATETIME NOT NULL,
+    PRIMARY KEY(id)
+);
+
+// name, phone, email, password, logged_in, confirmed, user_status, created
+DROP TABLE user_access;
+CREATE TABLE user_access(
+	user_id int(11) AUTO_INCREMENT NOT NULL,
+    username VARCHAR(10) NOT NULL,
+    phone VARCHAR(14) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    fullname VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    logged_in TINYINT(1) NOT NULL,
+    confirmed TINYINT(1) NOT NULL,
+    access_level TINYINT(1) NOT NULL,
+	user_status TINYINT(1) NOT NULL,
+    created DATETIME NOT NULL,
+    PRIMARY KEY(user_id)
+);
+
+CREATE TABLE user_session(
+    id int(11) AUTO_INCREMENT NOT NULL,
+    user_id int(11) NOT NULL,
+    hash VARCHAR(64) NOT NULL,
+    PRIMARY KEY(id)
+)
+
+DROP TABLE users;
+
+DROP TABLE blog_post;
+CREATE TABLE blog_post(
+	blog_id int(11) AUTO_INCREMENT NOT NULL,
+    cat_id int(11) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    short_desc VARCHAR(255) NOT NULL,
+    content MEDIUMTEXT NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    alias VARCHAR(255) NOT NULL,
+    state TINYINT(1) NOT NULL,
+    created DATETIME NOT NULL,
+    PRIMARY KEY(blog_id)
+);
+
+DROP TABLE request;
+CREATE TABLE request(
+    request_id INT(11) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(14) NOT NULL,
+    message TEXT NOT NULL,
+    request_service VARCHAR(20) NOT NULL,
+    request_package VARCHAR(20) NOT NULL,
+    read_state TINYINT(1) NOT NULL,
+    request_state TINYINT(1) NOT NULL,
+    request_date DATETIME NOT NULL,
+    PRIMARY KEY(request_id)
+);
+
+DROP TABLE messages;
+CREATE TABLE messages(
+    message_id int(11) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(200) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(14) NOT NULL,
+    details TEXT NOT NULL,
+    budget VARCHAR(50) NOT NULL,
+    read_state TINYINT(1) NOT NULL,
+    message_state TINYINT(1) NOT NULL,
+    message_date DATETIME NOT NULL,
+    PRIMARY KEY(message_id)
+);
+
+DROP TABLE resource;
+CREATE TABLE resource(
+    id int(11) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    short_desc VARCHAR(255) NOT NULL,
+    file VARCHAR(255) NOT NULL,
+    state TINYINT(1) NOT NULL,
+    created DATETIME NOT NULL,
+    PRIMARY KEY(id)
+)

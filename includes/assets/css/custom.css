@@ -1,0 +1,38 @@
+.downloads-hr{
+	margin-top: 0px;
+}
+
+.pagination{
+	margin: 0 0 !important;
+	/* float: right; */
+}
+/*Errors*/
+.red{
+	color: red !important;
+	font-weight: 600 !important;
+}
+.red:hover{
+	color: darkred !important;
+}
+.error{
+	color: red !important;
+	font-style: italic !important;
+	font-size: .9em !important;
+	
+}
+.red-border{
+	border: 1px solid red !important;
+}
+.input-no-error{
+	border: 1px solid green !important;
+}
+.timestamp{
+	/*min-width: 100px !important;*/
+	float: none !important;; 
+}
+.small-text{
+	display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
